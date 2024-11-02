@@ -1,0 +1,94 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#infobar {
+    position: fixed;
+    bottom: 20px;
+    right: 25%;
+    width: 780px;
+    background: var(--background-color);
+    background-size: 200% 200%;
+    background-position: center;
+    color: var(--text-color);
+    padding: 16px;
+    border-radius: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    min-height: 15px;
+    max-height: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 5px #888, 0 0 10px #888, 0 0 15px #a0a0a0, 0 0 20px #a0a0a0, 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite, backgroundPulse 4s ease-in-out infinite;
+    cursor: default;
+    user-select: none;
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    position: relative;
+    will-change: transform;
+    top: -6px;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+#infobar-controls {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    z-index: 1000;
+    display: none;
+}
+
+#move-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(150, 150, 150, 0.7);
+    color: #333;
+    padding: 2px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0 15px 0 15px;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+#move-button:hover {
+    background-color: #a0a0a0;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--glow-color); }
+    70% { box-shadow: 0 0 0 10px rgba(160, 160, 160, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(160, 160, 160, 0); }
+}
+
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@keyframes scrollText {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
